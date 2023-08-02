@@ -15,9 +15,12 @@
     * Link 
 * Validation
 * Bootstrap
-* REST API Calls   
 * Authentication (Basic and JWT Tokens) 
+    * Hardcoded Authentication
 * List
+* Context
+    * Share a common State with multiple components via `createContext()` and `useContext()` hooks.
+* REST API Calls   
 
 ## Which third party npm modules did I use?
 * react-router-dom

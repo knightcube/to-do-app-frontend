@@ -7,23 +7,27 @@ import ListToDosComponent from './ListToDosComponent.js';
 import LogoutComponent from './LogoutComponent.js';
 import ErrorComponent from './ErrorComponent.js';
 import FooterComponent from './FooterComponent.js';
+import AuthProvider from "./security/AuthContext";
 
 function ToDoApp() {
     return (
         <div>
-            <BrowserRouter>
-                <HeaderComponent />
+            <AuthProvider>
+                <BrowserRouter>
+                    <HeaderComponent />
 
-                <Routes>
-                    <Route path='/' element={<LoginComponent />}></Route>
-                    <Route path='/login' element={<LoginComponent />}></Route>
-                    <Route path='/welcome/:username' element={<WelcomeComponent />}></Route>
-                    <Route path='/todos' element={<ListToDosComponent />}></Route>
-                    <Route path='/logout' element={<LogoutComponent />}></Route>
+                    <Routes>
+                        <Route path='/' element={<LoginComponent />}></Route>
+                        <Route path='/login' element={<LoginComponent />}></Route>
+                        <Route path='/welcome/:username' element={<WelcomeComponent />}></Route>
+                        <Route path='/todos' element={<ListToDosComponent />}></Route>
+                        <Route path='/logout' element={<LogoutComponent />}></Route>
 
-                    <Route path='/*' element={<ErrorComponent />}></Route>
-                </Routes>
-            </BrowserRouter>
+                        <Route path='/*' element={<ErrorComponent />}></Route>
+                    </Routes>
+                </BrowserRouter>
+            </AuthProvider>
+
             <FooterComponent />
         </div>
     )
