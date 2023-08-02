@@ -25,14 +25,11 @@ function LoginComponent() {
     }
 
     function handleLoginBtn() {
-        if (username === "knightcube" && password === "pass1234") {
-            console.log("success")
+        if (authContext.login(username, password)) {
             setShowSuccessMessage(true)
             setShowErrorMessage(false)
             navigate(`/welcome/${username}`)
-            authContext.setAuthenticated(true)
         } else {
-            console.log("failed")
             setShowSuccessMessage(false)
             setShowErrorMessage(true)
         }

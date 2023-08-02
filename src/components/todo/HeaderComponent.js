@@ -12,7 +12,7 @@ function HeaderComponent() {
     // console.log(authContext);
 
     function logout(){
-        authContext.setAuthenticated(false)
+        authContext.logout()
     }
 
     return (
@@ -23,7 +23,7 @@ function HeaderComponent() {
                         <a className="navbar-brand ms-2 fs-2 fw-bold text-black" href="https://github.com/knightcube">@knightcube</a>
                         <div className="collapse navbar-collapse">
                             <ul className="navbar-nav">
-                                <li className="nav-item fs-5">{isAuthenticated &&  <Link className="nav-link" to="/welcome/knightcube">Home</Link>} </li>
+                                <li className="nav-item fs-5">{isAuthenticated &&  <Link className="nav-link" to="/welcome/admin">Home</Link>} </li>
                                 <li className="nav-item fs-5">{isAuthenticated && <Link className="nav-link" to="/todos">Todos</Link>}</li>
                             </ul>
                         </div>
